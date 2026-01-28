@@ -1,0 +1,42 @@
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    body { margin: 0; background: #0b0d12; color: #e9eef7; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 16px 48px; }
+    h1 { font-size: 22px; margin: 0 0 6px; }
+    p.sub { margin: 0 0 18px; color: #b9c3d6; font-size: 14px; }
+    .card {
+      background: #121827; border: 1px solid #222b3f; border-radius: 14px;
+      padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    @media (max-width: 720px){ .grid { grid-template-columns: 1fr; } }
+
+    label { display:block; font-size: 12px; color:#b9c3d6; margin: 0 0 6px; }
+    input, select {
+      width: 100%; box-sizing: border-box;
+      background:#0f1422; border:1px solid #2a3550; color:#e9eef7;
+      padding: 10px 12px; border-radius: 10px; outline: none;
+    }
+    input:focus, select:focus { border-color:#4a66ff; box-shadow: 0 0 0 3px rgba(74,102,255,.18); }
+    .row { margin-bottom: 10px; }
+
+    .actions { display:flex; gap:10px; flex-wrap: wrap; margin-top: 12px; }
+    button {
+      border:0; border-radius: 10px; padding: 10px 14px; cursor:pointer;
+      background:#4a66ff; color:white; font-weight:600;
+    }
+    button.secondary { background:#2a3550; }
+    button:disabled { opacity:.6; cursor:not-allowed; }
+
+    .result {
+      margin-top: 14px; padding: 12px; border-radius: 12px;
+      border: 1px dashed #2a3550; background: rgba(15,20,34,.65);
+      display:flex; justify-content: space-between; gap: 10px; align-items: center;
+    }
+    .badge { font-size:12px; padding: 4px 10px; border-radius: 999px; border:1px solid #2a3550; color:#b9c3d6; }
+    .pred { font-size: 22px; font-weight: 800; letter-spacing: .2px; }
+    .muted { color:#b9c3d6; font-size: 13px; }
+    .error { margin-top: 12px; color:#ffb4b4; font-size: 13px; }
+    .ok { border-color: rgba(93, 225, 147, .35); }
+    .err { border-color: rgba(255, 132, 132, .35); }
+    code { background: #0f1422; padding: 2px 6px; border-radius: 8px; border: 1px solid #2a3550; }
+ 

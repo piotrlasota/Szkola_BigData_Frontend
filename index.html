@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Concrete Strength – Inference</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>Wytrzymałość betonu – predykcja</h1>
+    <p class="sub">
+      Wprowadź parametry, kliknij <b>Sprawdź</b>. Wynik pojawi się poniżej.
+      Endpoint: <code>POST /ConcretePrediction</code>
+    </p>
+
+    <div class="card">
+      <form id="frm">
+        <div class="grid">
+          <div class="row">
+            <label for="request_id">request_id</label>
+            <input id="request_id" name="request_id" type="text" placeholder="np. req-123" />
+          </div>
+
+          <div class="row">
+            <label for="model">model</label>
+            <select id="model" name="model">
+              <option value="concrete_strength_v1" selected>concrete_strength_v1</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <label for="Cement">Cement</label>
+            <input id="Cement" name="Cement" type="number" step="any" value="540" required />
+          </div>
+
+          <div class="row">
+            <label for="BlastFurnaceSlag">BlastFurnaceSlag</label>
+            <input id="BlastFurnaceSlag" name="BlastFurnaceSlag" type="number" step="any" value="0" required />
+          </div>
+
+          <div class="row">
+            <label for="FlyAsh">FlyAsh</label>
+            <input id="FlyAsh" name="FlyAsh" type="number" step="any" value="0" required />
+          </div>
+
+          <div class="row">
+            <label for="Water">Water</label>
+            <input id="Water" name="Water" type="number" step="any" value="162" required />
+          </div>
+
+          <div class="row">
+            <label for="Superplasticizer">Superplasticizer</label>
+            <input id="Superplasticizer" name="Superplasticizer" type="number" step="any" value="2.5" required />
+          </div>
+
+          <div class="row">
+            <label for="CoarseAggregate">CoarseAggregate</label>
+            <input id="CoarseAggregate" name="CoarseAggregate" type="number" step="any" value="1040" required />
+          </div>
+
+          <div class="row">
+            <label for="FineAggregate">FineAggregate</label>
+            <input id="FineAggregate" name="FineAggregate" type="number" step="any" value="676" required />
+          </div>
+
+          <div class="row">
+            <label for="Age">Age</label>
+            <input id="Age" name="Age" type="number" step="any" value="28" required />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="btnPredict" type="submit">Sprawdź</button>
+          <button class="secondary" id="btnFill" type="button">Wstaw przykładowe dane</button>
+          <button class="secondary" id="btnClear" type="button">Wyczyść</button>
+        </div>
+      </form>
+
+      <div id="out" class="result" style="display:none;">
+        <div>
+          <div class="muted">Status: <span id="status" class="badge">—</span></div>
+          <div class="muted">request_id: <span id="rid">—</span> · model: <span id="mdl">—</span></div>
+        </div>
+        <div style="text-align:right;">
+          <div class="muted">Predykcja</div>
+          <div id="pred" class="pred">—</div>
+        </div>
+      </div>
+
+      <div id="err" class="error" style="display:none;"></div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
